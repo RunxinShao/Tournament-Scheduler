@@ -9,11 +9,41 @@ A Python solver for the **Traveling Tournament Problem (TTP)** that generates an
 - Generate round-robin schedules using circle method
 - Evaluate and optimize travel distance
 
+## Installation
+
+### 1. Create Virtual Environment
+
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Linux/Mac:**
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Quick Start
 
+### Command Line
 ```bash
 python tounrney_starter.py
 ```
+
+### Web Interface
+```bash
+streamlit run app.py
+```
+
+The app will open automatically in your browser at `http://localhost:8501`.
 
 ## Usage
 
@@ -35,4 +65,5 @@ rounds_optimized, improved = greedy_optimize_tours(rounds, D)
 ## Requirements
 
 - Python 3.10+
-- Standard library only (no external dependencies)
+- Core algorithm (`tounrney_starter.py`): Standard library only (no external dependencies)
+- Web interface (`app.py`): See `requirements.txt` for dependencies
