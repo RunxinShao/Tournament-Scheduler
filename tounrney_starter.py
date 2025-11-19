@@ -1,8 +1,9 @@
 # tourney_starter.py
 # Minimal starter for Tournament Scheduler: data, distances, RR schedule, travel eval, greedy tour heuristic.
 # Dependencies: only Python stdlib + math. Optional later: pandas, folium, ortools, streamlit.
+# change
 
-import math
+
 import random
 from typing import List, Dict, Tuple
 
