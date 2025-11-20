@@ -25,14 +25,14 @@ def check_files():
     
     required_files = [
         # Core Modules
-        'tourney_starter.py',
-        'validators.py',
-        'optimizers.py',
-        'exact_solver.py',
+        'core/tourney_starter.py',
+        'core/validators.py',
+        'core/optimizers.py',
+        'core/exact_solver.py',
         
         # Visualization
-        'visualize.py',
-        'streamlit_app.py',
+        'visualization/visualize.py',
+        'visualization/streamlit_app.py',
         
         # Experiments
         'experiments/run_experiment.py',
@@ -45,14 +45,14 @@ def check_files():
         'tests/__init__.py',
         
         # Documentation
-        'PROJECT_LOG.md',
-        'PROJECT_SUMMARY.md',
-        'VISUALIZATION_GUIDE.md',
-        'Problem_flow.md',
+        'documentation/PROJECT_LOG.md',
+        'documentation/PROJECT_SUMMARY.md',
+        'documentation/VISUALIZATION_GUIDE.md',
+        'documentation/Problem_flow.md',
         
         # Demo & Utilities
-        'demo_visualization.py',
-        'run_streamlit.sh',
+        'demo_utilities/demo_visualization.py',
+        'demo_utilities/run_streamlit.sh',
         
         # Config
         'requirements.txt',
@@ -80,7 +80,7 @@ def check_imports():
     sys.path.insert(0, '.')
     
     try:
-        from tourney_starter import (
+        from core.tourney_starter import (
             generate_teams, distance_matrix, round_robin_pairs,
             evaluate_schedule_travel, haversine
         )
@@ -90,7 +90,7 @@ def check_imports():
         return False
     
     try:
-        from validators import (
+        from core.validators import (
             validate_schedule, check_max_consecutive_aways,
             check_repeaters, check_home_away_balance
         )
@@ -100,7 +100,7 @@ def check_imports():
         return False
     
     try:
-        from optimizers import (
+        from core.optimizers import (
             hill_climb, simulated_annealing,
             move_swap_rounds, move_swap_matches, move_flip_venue
         )
@@ -110,7 +110,7 @@ def check_imports():
         return False
     
     try:
-        from visualize import create_team_map, create_schedule_grid
+        from visualization.visualize import create_team_map, create_schedule_grid
         print("  ✓ visualize imports")
     except Exception as e:
         print(f"  ❌ visualize imports failed: {e}")
@@ -124,7 +124,7 @@ def check_imports():
         return False
     
     try:
-        from exact_solver import solve_exact
+        from core.exact_solver import solve_exact
         print("  ✓ exact_solver imports (ortools available)")
     except ImportError:
         print("  ⚠ exact_solver not available (ortools optional)")
@@ -140,8 +140,8 @@ def check_functionality():
     print_section("FUNCTIONALITY VERIFICATION")
     
     sys.path.insert(0, '.')
-    from tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
-    from validators import validate_schedule
+    from core.tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
+    from core.validators import validate_schedule
     
     try:
         # Generate teams

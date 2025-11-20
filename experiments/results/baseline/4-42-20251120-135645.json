@@ -1,0 +1,37 @@
+{
+  "timestamp": "20251120-135645",
+  "seed": 42,
+  "N": 4,
+  "baseline_total": 215.4131229046767,
+  "center": [
+    37.7749,
+    -122.4194
+  ],
+  "spread_km": 20.0,
+  "results": [
+    {
+      "optimizer": "baseline",
+      "best_total": 215.4131229046767,
+      "runtime_s": 1.0967254638671875e-05,
+      "improvements": [],
+      "violations": [
+        "Team 3: home/away imbalance (home: 0, away: 3, difference: 3)"
+      ],
+      "valid": false
+    },
+    {
+      "optimizer": "hill_climb",
+      "best_total": 215.4131229046767,
+      "runtime_s": 0.014732122421264648,
+      "improvements": [],
+      "violations": [
+        "Team 3: home/away imbalance (home: 0, away: 3, difference: 3)"
+      ],
+      "valid": false,
+      "iterations": 634,
+      "time_elapsed": 0.014653205871582031,
+      "baseline_total": 215.4131229046767,
+      "improvement_pct": 0.0
+    }
+  ]
+}

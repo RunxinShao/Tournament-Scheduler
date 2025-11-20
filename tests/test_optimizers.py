@@ -13,15 +13,15 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
-from optimizers import (
+from core.tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
+from core.optimizers import (
     move_swap_rounds,
     move_swap_matches,
     move_flip_venue,
     hill_climb,
     simulated_annealing,
 )
-from validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
+from core.validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
 
 
 class TestMovePrimitives(unittest.TestCase):

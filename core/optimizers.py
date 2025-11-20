@@ -14,8 +14,8 @@ import random
 import time
 from typing import List, Tuple, Dict, Any, Callable, Optional
 
-from tourney_starter import evaluate_schedule_travel
-from validators import (
+from .tourney_starter import evaluate_schedule_travel
+from .validators import (
     validate_schedule,
     check_max_consecutive_aways,
     check_repeaters,

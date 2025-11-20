@@ -17,9 +17,9 @@ from typing import List, Dict, Any, Tuple
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
-from optimizers import hill_climb, simulated_annealing
-from validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
+from core.tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
+from core.optimizers import hill_climb, simulated_annealing
+from core.validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
 
 
 def run_baseline(teams: List[Dict[str, Any]], D: List[List[float]], schedule: List[List[Tuple[int, int]]]) -> Dict[str, Any]:

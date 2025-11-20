@@ -47,7 +47,7 @@ def solve_exact(
     except ImportError:
         raise ImportError(
             "ortools is required for exact solver. Install with: pip install ortools\n"
-            "For larger instances, use heuristic optimizers from optimizers.py"
+            "For larger instances, use heuristic optimizers from core.optimizers"
         )
     
     import time

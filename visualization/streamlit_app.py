@@ -19,10 +19,10 @@ from typing import List, Dict, Any
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
-from optimizers import hill_climb, simulated_annealing
-from validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
-from visualize import create_team_map, create_schedule_grid, save_map_html
+from core.tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
+from core.optimizers import hill_climb, simulated_annealing
+from core.validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
+from visualization.visualize import create_team_map, create_schedule_grid, save_map_html
 
 # Page config
 st.set_page_config(
@@ -145,7 +145,7 @@ if st.button("Generate Schedule", type="primary"):
     
     if run_exact:
         try:
-            from exact_solver import solve_exact
+            from core.exact_solver import solve_exact
             with st.spinner("Running Exact Solver (this may take a while)..."):
                 if n_teams > 10:
                     st.warning(f"Exact solver limited to N <= 10. Current N = {n_teams}")

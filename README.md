@@ -95,7 +95,7 @@ pip install -r requirements.txt
 
 **1. Run the complete demo:**
 ```bash
-python demo_visualization.py
+python demo_utilities/demo_visualization.py
 ```
 
 This demonstrates:
@@ -109,10 +109,10 @@ This demonstrates:
 **2. Launch the interactive web application:**
 ```bash
 # Option 1: Use the helper script
-./run_streamlit.sh
+./demo_utilities/run_streamlit.sh
 
 # Option 2: Run directly
-python3 -m streamlit run streamlit_app.py
+python3 -m streamlit run visualization/streamlit_app.py
 ```
 
 Then open `http://localhost:8501` in your browser.
@@ -132,9 +132,9 @@ python -m unittest discover tests -v
 ### Basic Tournament Scheduling
 
 ```python
-from tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
-from optimizers import hill_climb, simulated_annealing
-from validators import validate_schedule, check_max_consecutive_aways
+from core.tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
+from core.optimizers import hill_climb, simulated_annealing
+from core.validators import validate_schedule, check_max_consecutive_aways
 
 # Generate teams
 teams = generate_teams(n=6, center=(37.7749, -122.4194), spread_km=20.0)
@@ -163,7 +163,7 @@ print(f"Schedule valid: {ok}")
 ### Constraint Validation
 
 ```python
-from validators import (
+from core.validators import (
     validate_schedule,
     check_max_consecutive_aways,
     check_repeaters,
@@ -184,7 +184,7 @@ if ok1 and ok2 and ok3 and ok4:
 ### Visualization
 
 ```python
-from visualize import create_team_map, create_schedule_grid, save_map_html
+from visualization.visualize import create_team_map, create_schedule_grid, save_map_html
 
 # Create interactive map
 map_obj = create_team_map(teams, schedule, D, title="Tournament Schedule")
@@ -200,35 +200,37 @@ print(grid_html)
 
 ```
 Tournament-Scheduler/
-├── Core Modules
+├── core/                        # Core Modules
 │   ├── tourney_starter.py      # Team generation, distances, schedules
 │   ├── validators.py            # 4 constraint validators
 │   ├── optimizers.py            # Hill-climb & Simulated Annealing
 │   └── exact_solver.py          # CP-SAT exact solver (optional)
 │
-├── Visualization
+├── visualization/                # Visualization
 │   ├── visualize.py             # Maps & grids
 │   └── streamlit_app.py         # Interactive web app
 │
-├── Experiments
+├── experiments/                  # Experiments
 │   ├── run_experiment.py        # Batch experiment harness
-│   └── README.md                # Experiment protocol
+│   ├── README.md                # Experiment protocol
+│   └── results/                 # Experiment output directory
 │
-├── Tests
+├── tests/                        # Tests
 │   ├── test_core.py             # 15 core tests
 │   └── test_optimizers.py       # 9 optimizer tests
 │
-├── Documentation
-│   ├── PROJECT_LOG.md             # Complete development log
+├── documentation/                # Documentation
+│   ├── PROJECT_LOG.md           # Complete development log
 │   ├── PROJECT_SUMMARY.md       # Project overview
 │   ├── VISUALIZATION_GUIDE.md   # Visualization instructions
-│   └── Problem_flow.md           # Original specification
+│   └── Problem_flow.md          # Original specification
 │
-├── Demo & Utilities
+├── demo_utilities/               # Demo & Utilities
 │   ├── demo_visualization.py    # Complete demo script
-│   └── run_streamlit.sh          # Streamlit launcher
+│   └── run_streamlit.sh         # Streamlit launcher
 │
 ├── requirements.txt              # Dependencies
+├── verify_structure.py           # Structure verification script
 └── README.md                     # This file
 ```
 

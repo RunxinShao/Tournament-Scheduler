@@ -15,13 +15,13 @@ import os
 import random
 from typing import List, Dict, Any
 
-# Add current directory to path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
-from optimizers import hill_climb, simulated_annealing
-from validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
-from visualize import create_team_map, create_schedule_grid, save_map_html
+from core.tourney_starter import generate_teams, distance_matrix, round_robin_pairs, evaluate_schedule_travel
+from core.optimizers import hill_climb, simulated_annealing
+from core.validators import validate_schedule, check_max_consecutive_aways, check_repeaters, check_home_away_balance
+from visualization.visualize import create_team_map, create_schedule_grid, save_map_html
 
 
 def print_section(title: str):
@@ -268,7 +268,7 @@ def demo_visualization(teams: List[Dict[str, Any]], schedule: List, D: List[List
     
     # Text schedule
     print("\nText schedule representation:")
-    from visualize import create_schedule_text
+    from visualization.visualize import create_schedule_text
     print(create_schedule_text(schedule, teams))
 
 

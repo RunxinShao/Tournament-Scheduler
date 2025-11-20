@@ -53,7 +53,7 @@ def create_team_map(
         ).add_to(m)
     
     # Add travel routes for a representative team (team 0)
-    from tourney_starter import evaluate_schedule_travel
+    from core.tourney_starter import evaluate_schedule_travel
     per_team, total = evaluate_schedule_travel(schedule, teams, D)
     
     # Track team 0's route
