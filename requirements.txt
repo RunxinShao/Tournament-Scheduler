@@ -1,0 +1,16 @@
+# Core dependencies for Tournament Scheduler
+
+# Web application
+streamlit>=1.28.0
+
+# Visualization
+folium>=0.14.0
+pandas>=2.0.0
+
+# Optional: Exact solver
+# ortools>=9.8.0
+
+# Note: Standard library modules used:
+# - math, random, typing, copy, json, csv, time, datetime, unittest
+# These do not need to be installed separately
+
