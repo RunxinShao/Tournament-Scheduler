@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated files (optional - can be committed if needed for demos)
+# demo_map.html
+# demo_schedule_grid.html
+# map_*.html
+
+# Experiment results (can be large)
+experiments/results/*.json
+experiments/results/*.csv
+!experiments/results/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
